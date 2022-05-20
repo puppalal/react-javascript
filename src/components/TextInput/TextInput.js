@@ -1,22 +1,11 @@
 import React, { useState } from 'react';
+import AddInputData from './AddInputData'
 
-const TextInput = () => {
-    const [input, setInput] = useState('');
-    const [output, setOutput] = useState([]);
-
-    const handleChange = (e) => {
-        setInput(e.target.value)
-    }
-    
-    const handleClick = () => {
-        setOutput([...output, input])
-    }
+const TextInput = () => { // used to pass props to AddInputData component
+   
     return (
-        <div>
-            <label>Enter your Text</label><br />
-            <input type='text' placeholder='Enter text' value={input} name='input' onChange={handleChange}></input>
-            <button type='button' onClick={handleClick}>click to append</button><br />
-            {output.map((value, index) => <li>{value}</li>)}
+        <div> 
+           <AddInputData label='Enter Known Language ' button='Add To List' />
         </div>
     );
 
